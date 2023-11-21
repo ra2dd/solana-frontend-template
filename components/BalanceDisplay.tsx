@@ -19,7 +19,7 @@ export const BalanceDisplay: FC = () => {
 
   return (
     <div>
-      <p>{publicKey ? `SOL Balance: ${balance / LAMPORTS_PER_SOL}` : ""}</p>
+      <p>{publicKey ? `${(balance / LAMPORTS_PER_SOL).toFixed(3)} Sol` : ""}</p>
     </div>
   );
 };

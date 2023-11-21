@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import styles from "../styles/Home.module.css";
-import WalletContextProvider from "../components/WalletContextProvider";
 import { AppBar } from "../components/AppBar";
 import { BalanceDisplay } from "../components/BalanceDisplay";
 import { MintToForm } from "../components/MintToForm";
@@ -10,17 +9,23 @@ import Head from "next/head";
 
 const Home: NextPage = (props) => {
   return (
-    <div className={styles.App}>
+    <div className={styles.main}>
       <Head>
         <title>Token Program</title>
         <meta name="description" content="Solana template" />
       </Head>
-      <WalletContextProvider>
-        <AppBar />
-        <div className={styles.Main}>
-          <BalanceDisplay />
+      
+      <AppBar />
+
+      <div className={styles.content}>
+        <BalanceDisplay />
+        <div>
+          <p>Test</p>
+          <button>Submit</button>
         </div>
-      </WalletContextProvider>
+      </div>
+
+      <div></div>
     </div>
   );
 };
